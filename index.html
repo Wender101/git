@@ -13,7 +13,7 @@
             margin: 0px;
             padding: 0px;
             text-decoration: none;
-            list-style: none;
+            /* list-style: none; */
         }
 
         body {
@@ -30,6 +30,10 @@
             margin-bottom: 50px;
         }
 
+        body > ol > li {
+            margin-left: 20px;
+        }
+
         pre {
             width: 100%;
             height: auto;
@@ -39,7 +43,7 @@
             display: block;
             font-size: 1.2em;
             box-shadow: 2px 2px 10px inset rgba(0, 0, 0, 0.555);
-            margin: 10px 0px 20px;
+            margin: 10px 0px 20px -20px;
             overflow: auto;
         }
 
@@ -60,7 +64,7 @@
     <h1>Comandos do git</h1>
     <ol>
         <li>
-            Primeiro comando, geralmente usando no inicio do projeto
+            Geralmente usando no inicio do projeto
 <pre>
     <span>//* Serve para iniciar um novo projeto</span>
     git init
@@ -68,7 +72,7 @@
         </li>
 
         <li>
-            Segundo comando, usado para ver o status
+            Usado para ver o status
 <pre>
     <span>//* Serve para ver o status dos arquivos da pasta</span>
     git status
@@ -76,7 +80,7 @@
         </li>
 
         <li>
-            Terceiro comando, usando para adicionar no fluxo do git
+            Usando para adicionar no fluxo do git
 <pre>
     <span>//? Usando para adicionar no fluxo do git, dessa forma será possivél salvar as alterações feitas nele dps.</span>
     git add .\<span class="obs">'nome do arquivo'</span>
@@ -87,7 +91,7 @@
         </li>
 
         <li>
-            Quarto comando, usado para "comentar" uma alteração
+            Usado para "comentar" uma alteração
 <pre>
     <span>//; Com o comando:</span>
     git commit -a -m "comentario dentro das aspas duplas"
@@ -95,7 +99,7 @@
         </li>
 
         <li>
-            Quinto comando, usado para adicionar um repositorio remoto
+            Usado para adicionar um repositorio remoto
 <pre>
     <span>//? Para adicionar repositorio um remoto, usaremos o comando:</span>
     git remote add origin <span class="obs">'link do repositorio, OBS: sem as aspas'</span>
@@ -103,7 +107,7 @@
         </li>
 
         <li>
-            Sexto comando, usado para remover um repositorio remoto
+            Usado para remover um repositorio remoto
 <pre>
     <span>//! Para remover repositorio remoto, usaremos o comando:</span>
     git remote remove origin
@@ -111,22 +115,21 @@
         </li>
 
         <li>
-            Setimo comando, usado para parear o main
+            Usado para parear o main
 <pre>
     <span>//? Para parear o main, usaremos o comando:</span>
     git branch -M main
 </pre>
         </li>
-            Oitavo comando, usado para enviar os arquivos locais para o repositorio
         <li>
-            teste
+            Usado para enviar os arquivos locais para o repositorio
 <pre>
     <span>//? Para eviar os arquivos locais para o repositorio, usaremos o comando:</span>
     git push -u origin main
 </pre>
         </li>
-            Nono comando, usado para criar um novo branch, com isso você podera programar em um branch diferente dos outros
         <li>
+            Usado para criar um novo branch, com isso você podera programar em um branch diferente dos outros
 <pre>
     <span>//; Usado para criar um novo branch</span>
     git checkout -b "nome do novo branch, dentro das aspas duplas"
@@ -134,10 +137,34 @@
         </li>
 
         <li>
-            teste
+            Enviar novas alterações para o repositorio
 <pre>
-    <span>//! teste</span>
-    teste
+    <span>//! Usado para mandar novas alterações para o repositorio</span>
+    git push
+</pre>
+        </li>
+
+        <li>
+            Entrar em um branch
+<pre>
+    <span>//; Usado para entrar em um branch</span>
+    git checkout <span class="obs">'nome do branch OBS: sem as aspas'</span>
+</pre>
+        </li>
+
+        <li>
+            Mostra todos os branchs da aplicação
+<pre>
+    <span>//? Usado para mostra todos os branchs da aplicação</span>
+    git branch
+</pre>
+        </li>
+
+        <li>
+           Vai unir o branch desejado com o branch que o usuario está. Este comando é geralmente usado após o '11º' comando da lista
+<pre>
+    <span>//! Usado para mandar novas alterações para o repositorio</span>
+    git merge <span class="obs">'nome do branch que queira unir ao branch que você está. OBS: sem as aspas'</span>
 </pre>
         </li>
     </ol>
