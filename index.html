@@ -13,6 +13,7 @@
             margin: 0px;
             padding: 0px;
             text-decoration: none;
+            list-style: none;
         }
 
         body {
@@ -49,6 +50,10 @@
         span.git {
             color: yellow;
         }
+
+        span.obs {
+            color: rgb(162, 0, 255);
+        }
     </style>
 </head>
 <body>
@@ -57,7 +62,7 @@
         <li>
             Primeiro comando, geralmente usando no inicio do projeto
 <pre>
-    <span>// Serve para iniciar um novo projeto</span>
+    <span>//* Serve para iniciar um novo projeto</span>
     git init
 </pre>
         </li>
@@ -73,10 +78,10 @@
         <li>
             Terceiro comando, usando para adicionar no fluxo do git
 <pre>
-    <span>//! Usando para adicionar no fluxo do git, dessa forma será possivél salvar as alterações feitas nele dps.</span>
-    git add .\'nome do arquivo'
+    <span>//? Usando para adicionar no fluxo do git, dessa forma será possivél salvar as alterações feitas nele dps.</span>
+    git add .\<span class="obs">'nome do arquivo'</span>
 
-    <span>//! Caso queira adicionar todos os arquivos de uma só vez usa-se o comando</span>
+    <span>//? Caso queira adicionar todos os arquivos de uma só vez usa-se o comando</span>
     git add .
 </pre>
         </li>
@@ -85,7 +90,54 @@
             Quarto comando, usado para "comentar" uma alteração
 <pre>
     <span>//; Com o comando:</span>
-    <span class="git">git</span> commit -a -m "comentario dentro das aspas duplas"
+    git commit -a -m "comentario dentro das aspas duplas"
+</pre>
+        </li>
+
+        <li>
+            Quinto comando, usado para adicionar um repositorio remoto
+<pre>
+    <span>//? Para adicionar repositorio um remoto, usaremos o comando:</span>
+    git remote add origin <span class="obs">'link do repositorio, OBS: sem as aspas'</span>
+</pre>
+        </li>
+
+        <li>
+            Sexto comando, usado para remover um repositorio remoto
+<pre>
+    <span>//! Para remover repositorio remoto, usaremos o comando:</span>
+    git remote remove origin
+</pre>
+        </li>
+
+        <li>
+            Setimo comando, usado para parear o main
+<pre>
+    <span>//? Para parear o main, usaremos o comando:</span>
+    git branch -M main
+</pre>
+        </li>
+            Oitavo comando, usado para enviar os arquivos locais para o repositorio
+        <li>
+            teste
+<pre>
+    <span>//? Para eviar os arquivos locais para o repositorio, usaremos o comando:</span>
+    git push -u origin main
+</pre>
+        </li>
+            Nono comando, usado para criar um novo branch, com isso você podera programar em um branch diferente dos outros
+        <li>
+<pre>
+    <span>//; Usado para criar um novo branch</span>
+    git checkout -b "nome do novo branch, dentro das aspas duplas"
+</pre>
+        </li>
+
+        <li>
+            teste
+<pre>
+    <span>//! teste</span>
+    teste
 </pre>
         </li>
     </ol>
@@ -96,18 +148,24 @@
             try {
                 let spanPre = document.getElementsByTagName('span')[c]
 
-                if(spanPre.innerText[2] == '*') {
+                
+                if(spanPre.innerText[1] == '/') {
+                    spanPre.style.padding = '10px 0px 5px'
+                    spanPre.style.display = 'inline-block'
+
+                    if(spanPre.innerText[2] == '*') {
                     spanPre.style.color = 'green'
 
-                } else if(spanPre.innerText[2] == '?') {
-                    spanPre.style.color = 'rgb(86, 117, 255)'
+                    } else if(spanPre.innerText[2] == '?') {
+                        spanPre.style.color = 'rgb(86, 117, 255)'
 
-                } else if(spanPre.innerText[2] == '!') {
-                    spanPre.style.color = 'rgb(250, 85, 73)'
-                    
-                } else if(spanPre.innerText[2] == ';') {
-                    spanPre.style.color = 'rgb(73, 250, 197)'
-                    
+                    } else if(spanPre.innerText[2] == '!') {
+                        spanPre.style.color = 'rgb(250, 85, 73)'
+                        
+                    } else if(spanPre.innerText[2] == ';') {
+                        spanPre.style.color = 'rgb(73, 250, 197)'
+                        
+                    }
                 }
             } catch{}
 
