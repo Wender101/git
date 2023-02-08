@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turorial git</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+        }
+
+        body {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            font-family: 'Poppins', sans-serif;
+            background-color: #3f3b3b;
+            color: white;
+        }
+
+        body > h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        pre {
+            width: 100%;
+            height: auto;
+            color: white;
+            background-color: #1c1c1c;
+            padding: 20px 0px;
+            display: block;
+            font-size: 1.2em;
+            box-shadow: 2px 2px 10px inset rgba(0, 0, 0, 0.555);
+            margin: 10px 0px 20px;
+            overflow: auto;
+        }
+
+        pre > span {
+            color: rgb(92, 86, 86);
+        }
+
+        span.git {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comandos do git</h1>
+    <ol>
+        <li>
+            Primeiro comando, geralmente usando no inicio do projeto
+<pre>
+    <span>// Serve para iniciar um novo projeto</span>
+    git init
+</pre>
+        </li>
+
+        <li>
+            Segundo comando, usado para ver o status
+<pre>
+    <span>//* Serve para ver o status dos arquivos da pasta</span>
+    git status
+</pre>
+        </li>
+
+        <li>
+            Terceiro comando, usando para adicionar no fluxo do git
+<pre>
+    <span>//! Usando para adicionar no fluxo do git, dessa forma será possivél salvar as alterações feitas nele dps.</span>
+    git add .\'nome do arquivo'
+
+    <span>//! Caso queira adicionar todos os arquivos de uma só vez usa-se o comando</span>
+    git add .
+</pre>
+        </li>
+
+        <li>
+            Quarto comando, usado para "comentar" uma alteração
+<pre>
+    <span>//; Com o comando:</span>
+    <span class="git">git</span> commit -a -m "comentario dentro das aspas duplas"
+</pre>
+        </li>
+    </ol>
+
+    <script>
+        //? Vai alterar as cores dos comentarios de acordo com o sinal (!, ?, ;, *, ...)
+        for(let c = 0; c < 50; c++) {
+            try {
+                let spanPre = document.getElementsByTagName('span')[c]
+
+                if(spanPre.innerText[2] == '*') {
+                    spanPre.style.color = 'green'
+
+                } else if(spanPre.innerText[2] == '?') {
+                    spanPre.style.color = 'rgb(86, 117, 255)'
+
+                } else if(spanPre.innerText[2] == '!') {
+                    spanPre.style.color = 'rgb(250, 85, 73)'
+                    
+                } else if(spanPre.innerText[2] == ';') {
+                    spanPre.style.color = 'rgb(73, 250, 197)'
+                    
+                }
+            } catch{}
+
+            //? Vai mudar a cor dos nomes gits para amarelo
+            try {
+                let pre = document.getElementsByTagName('pre')[c]
+                let arroz = pre.innerHTML
+                pre.innerHTML = arroz.replace(/git /g, '<span class="git">git </span>')
+            } catch(error){}
+        }
+    </script>
+</body>
+</html>
